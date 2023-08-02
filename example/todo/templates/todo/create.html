@@ -1,0 +1,15 @@
+{% extends 'todo/base.html' %}
+{% block title %}
+Создать Задачу
+{%endblock%}
+
+{% block content %}
+    <h2>Создать Задачу</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.task }}
+        <button type="submit" class="btn btn-success">Создать</button>
+        <span>{{ error }}</span>
+    </form>
+{%endblock%}
